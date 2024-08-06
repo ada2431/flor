@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Imágenes con Reacciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #bdecb6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .reaction-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .reaction-buttons button {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .reaction-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .reaction-count {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+
+ <p><li><a href="#about"><font size="34"color=" #008000"face="Hello Valentica"<h1>Para ese ser tan especial que nos dio la vida</h1></font></a></li></p>
+
+<div class="gallery">
+    <div class="image-card">
+        <img src="mama.jpg" alt="Imagen 1">
+        <div class="reaction-buttons">
+            <button onclick="likeImage(1)">👍 Me gusta</button>
+            <button onclick="dislikeImage(1)">👎 No me gusta</button>
+        </div>
+        <div class="reaction-count">
+            <span id="like-count-1">0</span> 👍
+            <span id="dislike-count-1">0</span> 👎
+        </div>
+    </div>
+
+    <div class="image-card">
+        <img src="mom.jpg" alt="Imagen 2">
+        <div class="reaction-buttons">
+            <button onclick="likeImage(2)">👍 Me gusta</button>
+            <button onclick="dislikeImage(2)">👎 No me gusta</button>
+        </div>
+        <div class="reaction-count">
+            <span id="like-count-2">0</span> 👍
+            <span id="dislike-count-2">0</span> 👎
+        </div>
+    </div>
+
+    <div class="image-card">
+        <img src="mama1.png" alt="Imagen 3">
+        <div class="reaction-buttons">
+            <button onclick="likeImage(3)">👍 Me gusta</button>
+            <button onclick="dislikeImage(3)">👎 No me gusta</button>
+        </div>
+
+        <div class="reaction-count">
+            <span id="like-count-3">0</span> 👍
+            <span id="dislike-count-3">0</span> 👎
+        </div>
+    </div>
+</div>
+
+<script>
+    function likeImage(imageId) {
+        const likeCountSpan = document.getElementById(`like-count-${imageId}`);
+        let likeCount = parseInt(likeCountSpan.innerText);
+        likeCount += 1;
+        likeCountSpan.innerText = likeCount;
+    }
+
+    function dislikeImage(imageId) {
+        const dislikeCountSpan = document.getElementById(`dislike-count-${imageId}`);
+        let dislikeCount = parseInt(dislikeCountSpan.innerText);
+        dislikeCount += 1;
+        dislikeCountSpan.innerText = dislikeCount;
+    }
+</script>
+
+</body>
+</html>
